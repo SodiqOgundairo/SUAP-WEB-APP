@@ -6,20 +6,20 @@ import logo from '../assets/img/logo.png';
 
 const Header = () => {
   return (
-    <header className="flex justify-between p-4 bg-theme fixed w-full backdrop-blur-lg flex-wrap md:items-center z-10">
-      <Link to="/" className="text-orange-500 font-bold text-4xl italic">
+    <header className="flex justify-between px-10 py-4 bg-theme fixed w-full backdrop-blur-lg flex-wrap md:items-center z-10">
+      <Link to="/" className="text-theme font-bold text-4xl italic">
        <img src={logo} alt="suap logo" className="w-1/5"/> 
       </Link>
       <nav
-        className={`flex-col md:flex md:flex-row justify-center gap-7 items-center flex-wrap`}
+        className={`flex-col md:flex md:flex-row justify-center gap-7 items-center`}
       >
         <ul className="list-none block md:flex justify-center gap-4 p-4 flex-wrap">
-          <li className="hover:text-orange-500">
+          <li className="hover:text-light">
             <Link to={"/"} >
               About SUAP
             </Link>
           </li>
-          <li className="hover:text-orange-500">
+          <li className="hover:text-light">
             <Link to={"/"} >
               Contact Us
             </Link>
@@ -52,8 +52,8 @@ const Header = () => {
       </nav>
 
       <div className="flex gap-2 items-center justify-center">
-        <Link to='/' className="px-8 py-2 rounded-md text-dark">Login</Link>
-        <Link to='/' className="bg-dark text-light px-8 py-2 rounded-md ">Sign Up</Link>
+        <Link to='/' className="px-8 py-2 rounded-md text-dark hover:text-light">Login</Link>
+        <Link to='/' className="bg-dark text-light px-16 py-4 rounded-md hover:bg-light hover:text-theme hover:shadow-lg">Create Account</Link>
       </div>
 
       {/* <div

@@ -9,7 +9,7 @@ export default {
       colors: {
         dark: "#101010",
         light: "#fafafa",
-        theme: 'rgb(204, 154, 0)'
+        theme: '#D2AC67'
       },
     },
   },

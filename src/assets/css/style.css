@@ -3,3 +3,24 @@ body {
     margin: 0;
     padding: 0;
 }
+
+
+*::-webkit-scrollbar {
+    width: 8px; /* Adjust width as needed */
+    height: 8px; /* Adjust height as needed */
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Adjust track color */
+    height: 12px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #999; /* Adjust thumb color */
+    border-radius: 15px; /* Adjust border-radius as needed */
+  }
+  
+  *:-webkit-scrollbar-thumb:hover {
+    background-color: #777; /* Adjust hover color */
+  }
+  
