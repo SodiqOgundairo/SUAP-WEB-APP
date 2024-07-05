@@ -29,7 +29,7 @@ const Home = () => {
               trading cryptocurrencies and digital assets.
             </p>
 
-            <div className="flex justify-start gap-5 items-center" data-aos="">
+            <div className="flex-col md:flex-row flex justify-start gap-5 items-center" data-aos="">
               <button className="bg-dark gap-3 px-5 py-2 text-light hover:bg-light hover:text-dark rounded-md flex justify-between items-center">
                 <FaGooglePlay className=" text-4xl" />
                 <span className="flex flex-col gap-0">
@@ -160,7 +160,7 @@ const Home = () => {
 
         <div className="flex flex-wrap justify-center gap-10 my-6">
           <div
-            className="w-2/5 bg-blue-100 p-10 rounded-md"
+            className="md:w-2/5 bg-blue-100 p-10 rounded-md"
             data-aos="fade-right"
           >
             <p className="text-2xl mb-2">
@@ -175,7 +175,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="w-2/5 bg-red-100 p-10" data-aos="zoom-out-left">
+          <div className="md:w-2/5 bg-red-100 p-10" data-aos="zoom-out-left">
             <p className="text-2xl mb-2">
               {" "}
               We always act in your best interests.
@@ -189,7 +189,7 @@ const Home = () => {
           </div>
 
           <div
-            className="w-2/5 bg-yellow-100 p-10 rounded-md"
+            className="md:w-2/5 bg-yellow-100 p-10 rounded-md"
             data-aos="zoom-in-left"
           >
             <p className="text-2xl mb-2"> Free initial appraisals.</p>
@@ -201,7 +201,7 @@ const Home = () => {
           </div>
 
           <div
-            className="w-2/5 bg-gray-300 p-10 rounded-md"
+            className="md:w-2/5 bg-gray-300 p-10 rounded-md"
             data-aos="zoom-in-right"
           >
             <p className="text-2xl mb-2">
