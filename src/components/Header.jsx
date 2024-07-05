@@ -15,7 +15,7 @@ const Header = () => {
       >
         <ul className="list-none block md:flex justify-center gap-4 p-4 flex-wrap">
           <li className="hover:text-light">
-            <Link to={"/"} >
+            <Link to={"/about"} >
               About SUAP
             </Link>
           </li>

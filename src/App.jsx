@@ -1,9 +1,11 @@
 import { Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import Home from "./Pages/Home";
 import { useEffect } from "react";
 import Aos from "aos";
 import 'aos/dist/aos.css';
+// import Footer from "./components/Footer";
+import About from "./Pages/About";
 
 function App() {
   useEffect(() => {
@@ -14,10 +16,12 @@ function App() {
   }, []);
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
       </Routes>
+      {/* <Footer /> */}
     </>
   );
 }
