@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <>
     <Header />
-    <div className="pt-[80px] ">
+    <div className="pt-[60px] ">
       <section className="py-5 px-10 bg-theme md:flex justify-between items-center">
         <div className="flex flex-col gap-6">
           <p

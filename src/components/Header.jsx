@@ -1,77 +1,98 @@
-import { Link } from "react-router-dom";
-import logo from '../assets/img/logo.png';
 import { useEffect, useState } from "react";
-import { IoCloseSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
+import logo from "../assets/img/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { IoCloseSharp } from "react-icons/io5";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuOpen && !event.target.closest('header')) {
-        setMenuOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [menuOpen]);
-
-  const handleMenu = () => {
+  const handleMenuToggle = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const handleMenuItemClick = () => {
-    setMenuOpen(false);
-  };
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuOpen && !event.target.closest("header")) {
+        setMenuOpen(!menuOpen);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.addEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuOpen]);
 
   return (
-    <header className="flex justify-between px-10 py-4 bg-theme fixed w-screen items-center z-10">
-      <Link to="/" style={{scrollBehavior: 'smooth'}}>
-        <img src={logo} alt="suap logo" className="w-1/5"/>
+    <header className="flex justify-between items-center h-20 bg-theme px-10 py-2 fixed top-0 left-0 w-screen z-50">
+      {/* Logo */}
+      <Link to="/" className="flex items-center">
+        <img
+          className="w-20 mr-2"
+          src={logo}
+          alt="Your Logo"
+        />
       </Link>
 
-      <div className="md:hidden" onClick={handleMenu}>
-        {menuOpen ? (
-          <IoCloseSharp className="text-4xl" />
-        ) : (
-          <GiHamburgerMenu className="text-4xl" />
-        )}
+      {/* Navigation Links (Desktop) */}
+      <nav className="hidden md:flex space-x-4 text-dark">
+        <Link to="/about" className="hover:text-light">
+          About SUAP
+        </Link>
+        <Link to="/" className="hover:text-light">
+          Contact Us
+        </Link>
+      </nav>
+
+      {/* Login & Signup (Desktop) */}
+      <div className="hidden md:flex items-center space-x-2">
+        <Link
+          to="/login"
+          className="px-8 py-2 rounded-md text-dark hover:text-light">
+          Login
+        </Link>
+        <Link
+          to="/signup"
+          className="bg-dark text-light text-center px-16 py-4 rounded-md hover:bg-light hover:text-theme hover:shadow-lg"
+        >
+          Create Account
+        </Link>
       </div>
 
+      {/* Hamburger Menu (Mobile) */}
+      <button
+        className="md:hidden text-dark focus:outline-none"
+        onClick={handleMenuToggle}
+      >
+        {menuOpen ? <IoCloseSharp size={24} /> : <GiHamburgerMenu size={24} />}
+      </button>
+
+      {/* Mobile Navigation (Conditional) */}
       <nav
         className={`${
-          menuOpen ? 'flex' : 'hidden'
-        } flex-col md:flex md:flex-row justify-center gap-7 items-center w-full md:w-auto`}
+          menuOpen ? "flex flex-col space-y-4 absolute top-full left-0 right-0 p-4 bg-theme z-10" : "hidden"
+        }`}
       >
-        <ul className="list-none block md:flex justify-center gap-4 p-4 flex-wrap">
-          <li className="hover:text-light">
-            <Link to="/about" onClick={handleMenuItemClick}>
-              About SUAP
-            </Link>
-          </li>
-          <li className="hover:text-light cursor-pointer">
-            <p onClick={handleMenuItemClick}>
-              Contact Us
-            </p>
-          </li>
-        </ul>
-
-        <div className="flex flex-col md:flex-row gap-2 items-center justify-center w-full md:w-auto">
-          <Link to="login" className="px-8 py-2 rounded-md text-dark hover:text-light">
-            Login
-          </Link>
-          <Link
-            to="/signup"
-            className="bg-dark text-light text-center px-16 py-4 rounded-md hover:bg-light hover:text-theme hover:shadow-lg"
-          >
-            Create Account
-          </Link>
-        </div>
+        <Link to="/about" className="text-dark hover:text-gray-400">
+          About
+        </Link>
+        <Link to="/" className="text-dark hover:text-gray-400">
+          Contact
+        </Link>
+        <Link
+          to="/login"
+          className="text-dark font-bold hover:text-gray-400 mt-4"
+        >
+          Login
+        </Link>
+        <Link
+          to="/signup"
+          className="bg-dark text-light text-center px-16 py-4 rounded-md hover:bg-light hover:text-theme hover:shadow-lg"
+        >
+          Create Account
+        </Link>
       </nav>
     </header>
   );
