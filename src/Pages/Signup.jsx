@@ -1,44 +1,54 @@
 import { useState } from "react";
 import login from "../assets/img/login.png";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaCheck, FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import PhoneInput from "react-phone-input-2";
 
 const Signup = () => {
   const [fName, setfName] = useState("");
   const [lName, setlName] = useState("");
   const [uName, setuName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowpassword] = useState(false);
+  const [refCode, setRefCode] = useState("");
+  const [termsChecked, setTermsChecked] = useState(false);
+  const [privacyChecked, setPrivacyChecked] = useState(false);
 
   const handleLogin = (e) => {
     e.preventDefault();
   };
 
   const toggelPasswordVisibility = () => {
-    setShowpassword(!showPassword)
-  }
+    setShowpassword(!showPassword);
+  };
 
   return (
-    <div className="flex flex-col md:flex-row h-screen">
-      <img
-        src={login}
-        className="h-1/4 md:h-full w-full md:w-1/2 object-cover object-bottom"
-        alt="Login"
-      />
+    <div className="flex flex-row h-full overflow-hidden">
+      <div className="hidden md:block md:w-1/2">
+        <img
+          src={login}
+          alt="Login"
+          className="fixed top-0 left-0 w-1/2 h-full object-cover"
+        />
+      </div>
 
-      <div className="flex flex-col flex-1 justify-center items-center p-10">
-        <div className="w-full max-w-md">
-          
-        <div className="font-bold flex justify-center gap-3 my-5">
-            <p className="text-gray-500">Already have an account? </p>      
-            <Link to='/login' className="text-bold underline hover:text-theme">Login Here</Link> 
+      <div className="flex flex-col flex-auto justify-center items-center p-10 h-full overflow-auto">
+        <div className="w-full max-w-lg">
+          <div className="font-bold flex justify-center gap-3 my-5">
+            <p className="text-gray-500">Already have an account? </p>
+            <Link to="/login" className="text-bold underline hover:text-theme">
+              Login Here
+            </Link>
           </div>
 
-          <div className=" text-center">
+          <div className="text-center">
             <p className="text-5xl font-bold">Create Account</p>
-            <p className="text-lg text-gray-500">Fill the form below to create an account</p>
+            <p className="text-lg text-gray-500">
+              Fill the form below to create an account
+            </p>
           </div>
 
           <form onSubmit={handleLogin} className="w-full my-5">
@@ -55,7 +65,7 @@ const Signup = () => {
                 required
               />
             </div>
-            
+
             <div className="flex flex-col gap-2 my-5">
               <label htmlFor="lName" className="text-lg">
                 Last Name
@@ -69,7 +79,7 @@ const Signup = () => {
                 required
               />
             </div>
-            
+
             <div className="flex flex-col gap-2 my-5">
               <label htmlFor="uName" className="text-lg">
                 Username
@@ -99,12 +109,27 @@ const Signup = () => {
               />
             </div>
 
+            <div className="flex flex-col gap-2 my-5">
+              <label htmlFor="phone" className="text-lg">
+                Phone Number
+              </label>
+              <PhoneInput
+                country={"ng"} // Set default country code
+                value={phone}
+                onChange={(phone) => setPhone(phone)}
+                inputClass="p-3 rounded-md w-full"
+                className="bg-gray-200"
+                containerClass="w-full"
+                inputStyle={{ width: "100%" }}
+              />
+            </div>
+
             <div className="flex flex-col gap-2 my-5 relative">
               <label htmlFor="password" className="text-lg">
                 Password
               </label>
               <input
-                type={showPassword ? 'text' : 'password'}
+                type={showPassword ? "text" : "password"}
                 placeholder="*****************"
                 autoComplete="current-password"
                 className="p-3 bg-gray-200 rounded-md w-full"
@@ -112,16 +137,68 @@ const Signup = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-              <div className="absolute right-3 top-12 cursor-pointer" onClick={toggelPasswordVisibility}>
+              <div
+                className="absolute right-3 top-12 cursor-pointer"
+                onClick={toggelPasswordVisibility}
+              >
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </div>
-              <p className="hover:underline hover:text-theme text-gray-500 text-base italic cursor-pointer text-end"> Forgot Password</p>
             </div>
+
+            <div className="flex flex-col gap-2 my-5">
+              <label htmlFor="refCode" className="text-lg">
+                Referral Code
+              </label>
+              <input
+                type="text"
+                placeholder="Referral Code"
+                className="p-3 bg-gray-200 rounded-md w-full"
+                value={refCode}
+                onChange={(e) => setRefCode(e.target.value)}
+              />
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <label className="flex items-center gap-2">
+                <div
+                  className={`w-6 h-6 flex items-center justify-center rounded-full cursor-pointer ${
+                    termsChecked ? "bg-theme" : "bg-gray-200"
+                  }`}
+                  onClick={() => setTermsChecked(!termsChecked)}
+                >
+                  {termsChecked && <FaCheck className="text-white" />}
+                </div>
+                <span>
+                  I agree to the{" "}
+                  <span className="underline hover:text-theme inline-block cursor-pointer">
+                    Terms and Conditions
+                  </span>
+                </span>
+              </label>
+
+              <label className="flex items-center gap-2">
+                <div
+                  className={`w-6 h-6 flex items-center justify-center rounded-full cursor-pointer ${
+                    privacyChecked ? "bg-theme" : "bg-gray-200"
+                  }`}
+                  onClick={() => setPrivacyChecked(!privacyChecked)}
+                >
+                  {privacyChecked && <FaCheck className="text-white" />}
+                </div>
+                <span>
+                  I agree to the{" "}
+                  <span className="underline hover:text-theme inline-block cursor-pointer">
+                    Privacy Policy
+                  </span>
+                </span>
+              </label>
+            </div>
+
             <button
               type="submit"
               className="w-full py-3 bg-theme text-light rounded-md mt-10 hover:bg-dark hover:text-light hover:shadow-md"
             >
-              Sign In
+              Create Account
             </button>
           </form>
           <div className="flex items-center my-10">
@@ -135,7 +212,6 @@ const Signup = () => {
               <FcGoogle className="text-4xl text-gray-500" />
             </button>
           </div>
-
         </div>
       </div>
     </div>
