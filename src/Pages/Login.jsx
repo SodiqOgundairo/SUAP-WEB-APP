@@ -2,15 +2,17 @@ import { useState } from "react";
 import login from "../assets/img/login.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowpassword] = useState(false);
+  const navigate = useNavigate()
 
   const handleLogin = (e) => {
     e.preventDefault();
+    navigate('/')
   };
 
   const toggelPasswordVisibility = () => {
@@ -69,7 +71,7 @@ const Login = () => {
               type="submit"
               className="w-full py-3 bg-theme text-light rounded-md mt-10 hover:bg-dark hover:text-light hover:shadow-md"
             >
-              Sign In
+              Login
             </button>
           </form>
           <div className="flex items-center my-10">

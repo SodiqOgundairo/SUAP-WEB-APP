@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 // import forgotpw from "../assets/img/fogotpw.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
@@ -18,6 +18,25 @@ const ForgotPasswordOtp = () => {
     navigate('/reset-password')
   };
 
+    const [digits, setDigits] = useState([null, null, null, null, null, null])
+    const inputRefs = useRef([])
+
+    const handleOTPChange = (e, index) => {
+      const newDigits = [...digits]
+      newDigits[index] = e.target.value
+      setDigits(newDigits)
+
+      //Move focus to the next input if a digit is entered
+      if(e.target.value.length === 1 && index < 5) {
+        inputRefs.current[index + 1].focus()
+      }
+
+      //clear the next input if backspace is pressed with an empty value
+      if(e.target.value.length === "" && index > 0) {
+        inputRefs.current[index - 1].focus()
+      }
+    }
+
   return (
     <div className="flex flex-row h-screen items-center justify-center overflow-hidden">
 
@@ -32,19 +51,17 @@ const ForgotPasswordOtp = () => {
           </div>
 
           <div className="w-full my-5">
-            <div className="flex flex-col gap-2 my-5">
-              <label htmlFor="email" className="text-lg">
-              E-Mail Address
-              </label>
-              <input
-                type="email"
-                placeholder="E-Mail Address"
-                autoComplete="email"
-                className="p-3 bg-gray-200 rounded-md w-full"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
+            <div className="flex flex-row justify-center gap-2 my-5">
+            {digits.map((digit, index) => (
+              <input 
+              key={index}
+              ref={(el) => (inputRefs.current[index] = el)}
+              className="py-3 text-center bg-gray-200 rounded-md w-4/5"
+              maxLength={1}
+              value={digit}
+              onChange={(e) => handleOTPChange(e, index)}
               />
+            ))}
             </div>
             <Link to="/forgot-password" className="text-base underline hover:text-theme cursor-pointer">
               Wrong email, try another
