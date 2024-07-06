@@ -30,7 +30,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-between px-10 py-4 bg-theme fixed w-screen flex-wrap md:items-center z-10">
+    <header className="flex justify-between px-10 py-4 bg-theme fixed w-screen items-center z-10">
       <Link to="/" style={{scrollBehavior: 'smooth'}}>
         <img src={logo} alt="suap logo" className="w-1/5"/>
       </Link>
@@ -62,12 +62,12 @@ const Header = () => {
         </ul>
 
         <div className="flex flex-col md:flex-row gap-2 items-center justify-center w-full md:w-auto">
-          <Link to="/" className="px-8 py-2 rounded-md text-dark hover:text-light">
+          <Link to="login" className="px-8 py-2 rounded-md text-dark hover:text-light">
             Login
           </Link>
           <Link
-            to="/"
-            className="bg-dark text-light px-16 py-4 rounded-md hover:bg-light hover:text-theme hover:shadow-lg"
+            to="/signup"
+            className="bg-dark text-light text-center px-16 py-4 rounded-md hover:bg-light hover:text-theme hover:shadow-lg"
           >
             Create Account
           </Link>

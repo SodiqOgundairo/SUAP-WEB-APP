@@ -6,6 +6,8 @@ import Aos from "aos";
 import 'aos/dist/aos.css';
 // import Footer from "./components/Footer";
 import About from "./Pages/About";
+import Login from "./Pages/Login";
+import Signup from "./Pages/Signup";
 
 function App() {
   useEffect(() => {
@@ -19,7 +21,9 @@ function App() {
       {/* <Header /> */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
       {/* <Footer /> */}
     </>
