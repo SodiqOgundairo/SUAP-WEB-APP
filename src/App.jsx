@@ -1,13 +1,14 @@
 import { Route, Routes } from "react-router-dom";
-// import Header from "./components/Header";
 import Home from "./Pages/Home";
 import { useEffect } from "react";
 import Aos from "aos";
 import 'aos/dist/aos.css';
-// import Footer from "./components/Footer";
 import About from "./Pages/About";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
+import ForgotPassword from "./Pages/ForgotPassword";
+import ForgotPasswordOtp from "./Pages/ForgotPasswordOTP";
+import ResetPassword from "./Pages/ResetPassword";
 
 function App() {
   useEffect(() => {
@@ -24,6 +25,9 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/forgot-password-otp" element={<ForgotPasswordOtp />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
       {/* <Footer /> */}
     </>

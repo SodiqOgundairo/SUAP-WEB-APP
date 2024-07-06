@@ -63,7 +63,7 @@ const Login = () => {
               <div className="absolute right-3 top-12 cursor-pointer" onClick={toggelPasswordVisibility}>
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </div>
-              <p className="hover:underline hover:text-theme text-gray-500 text-base italic cursor-pointer text-end"> Forgot Password</p>
+              <Link to="/forgot-password" className="hover:underline hover:text-theme text-gray-500 text-base italic cursor-pointer text-end"> Forgot Password</Link>
             </div>
             <button
               type="submit"
