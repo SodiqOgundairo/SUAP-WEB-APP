@@ -8,19 +8,20 @@ import customer from "../assets/img/customer.png";
 import whatWeDo from "../assets/img/what_we_do.png";
 import Header from "./../components/Header";
 import Footer from "./../components/Footer";
+import logo from "../assets/img/logo.png";
 
 const About = () => {
   return (
     <>
     <Header />
-    <div className="pt-[80px] ">
+    <div className="pt-[60px] ">
       <section className="py-16 px-10 bg-theme md:flex justify-between items-center">
         <div className="flex flex-col gap-10">
           <p
             className="text-dark text-4xl md:text-8xl font-extrabold"
             data-aos="fade-right"
           >
-            SUAP: Your Digital Trading Solution
+           <img src={logo} className="w-[20%] inline" alt="" /> Your Digital Trading Solution
           </p>
 
           <div data-aos="zoom-in">
