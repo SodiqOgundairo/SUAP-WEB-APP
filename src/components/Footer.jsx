@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/img/logo.png";
+import logo from "../assets/img/suap_white.png";
 
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <footer className="flex flex-wrap justify-between bg-dark px-10 py-8">
+    <footer className="flex flex-wrap md:flex-nowrap justify-betwee gap-5 md bg-dark px-10 py-8">
       <div className="flex flex-col gap-3">
-        <img src={logo} alt="suap logo" className="w-1/6" />
+        <img src={logo} alt="suap logo" className="w-1/2 md:w-[10%]" />
         <p className="text-sm text-light">© {year} SUAP all rights reserved</p>
       </div>
 
-      <div className="flex flex-wrap text-light gap-8">
+      <div className="flex flex-wrap md:flex-nowrap text-light gap-8">
         <div className="flex flex-col gap-3">
           <p className="text-lg font-bold">Legal</p>
           <Link to='/' className="text-base"> Privacy Policy</Link>

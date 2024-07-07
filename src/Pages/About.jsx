@@ -18,14 +18,14 @@ const About = () => {
       <section className="py-16 px-10 bg-theme md:flex justify-between items-center">
         <div className="flex flex-col gap-10">
           <p
-            className="text-dark text-4xl md:text-8xl font-extrabold"
+            className="text-dark text-4xl md:text-6xl font-extrabold"
             data-aos="fade-right"
           >
            <img src={logo} className="w-[20%] inline" alt="" /> Your Digital Trading Solution
           </p>
 
           <div data-aos="zoom-in">
-            <p className="text-base font-bold mb-5 w-2/3">
+            <p className="text-base italic mb-5 w-2/3">
               We are a platform with extensive experience, which is the key to
               earning trust. We are partners you can rely on when it comes to
               your digital assets. We are SUAP!

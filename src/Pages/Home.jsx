@@ -17,14 +17,14 @@ const Home = () => {
       <section className="py-5 px-10 bg-theme md:flex justify-between items-center">
         <div className="flex flex-col gap-6">
           <p
-            className="text-dark text-4xl md:text-8xl font-extrabold"
+            className="text-dark text-4xl md:text-6xl font-extrabold"
             data-aos="fade-right"
           >
             Buy and sell giftcards and crypto at the best rates.
           </p>
 
           <div data-aos="zoom-in">
-            <p className="text-base font-bold mb-5">
+            <p className="text-base italic mb-5">
               SUAP takes pride in being Nigeria's most trusted platform for
               trading cryptocurrencies and digital assets.
             </p>
@@ -59,7 +59,7 @@ const Home = () => {
 
       <section className="py-20 px-10 bg-light flex flex-col justify-center items-center">
         <p
-          className="text-3xl md:text-6xl md:w-2/4 text-center text-dark font-bold mb-5"
+          className="text-3xl md:text-4xl md:w-2/4 text-center text-dark font-bold mb-5"
           data-aos="fade-up"
         >
           Why should you use us as a trading platform?
@@ -78,7 +78,7 @@ const Home = () => {
             data-aos="fade-up"
           >
             <img src={unsual} alt="" className="rounded-lg" />
-            <p className="text-2xl font-bold">
+            <p className="text-lg md:text-2xl font-bold">
               We accept unusual digital assets.
             </p>
             <p className="text-base text-gray-500">
@@ -95,7 +95,7 @@ const Home = () => {
             data-aos="fade-up"
           >
             <img src={incentives} alt="" className="rounded-lg" />
-            <p className="text-2xl font-bold">
+            <p className="text-lg md:text-2xl font-bold">
               Get fantastic rates and incentives.
             </p>
             <p className="text-base text-gray-500">
@@ -112,7 +112,7 @@ const Home = () => {
             data-aos="fade-up"
           >
             <img src={cash} alt="" className="rounded-lg" />
-            <p className="text-2xl font-bold">
+            <p className="text-lg md:text-2xl font-bold">
               We accept unusual digital assets.
             </p>
             <p className="text-base text-gray-500">
@@ -129,7 +129,7 @@ const Home = () => {
             data-aos="fade-up"
           >
             <img src={rely} alt="" className="rounded-lg" />
-            <p className="text-2xl font-bold">You can rely on us.</p>
+            <p className="text-lg md:text-2xl font-bold">You can rely on us.</p>
             <p className="text-base text-gray-500">
               It's difficult to know who to trust in a crowded market. As
               experts, we send newsletters to our customers on a regular basis
@@ -142,7 +142,7 @@ const Home = () => {
       <section className="py-20 px-10 bg-light flex flex-col justify-center items-center">
         <img src={assets1} alt="" data-aos="zoom-out-down" />
         <p
-          className="text-3xl md:text-6xl md:w-2/4 text-center text-dark font-bold mb-5"
+          className="text-3xl md:text-4xl md:w-2/4 text-center text-dark font-bold mb-5"
           data-aos="fade-down"
         >
           Cryptocurrencies and digital assets made easy with facts
