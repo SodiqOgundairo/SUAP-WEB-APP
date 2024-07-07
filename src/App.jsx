@@ -9,6 +9,7 @@ import Signup from "./Pages/Signup";
 import ForgotPassword from "./Pages/ForgotPassword";
 import ForgotPasswordOtp from "./Pages/ForgotPasswordOTP";
 import ResetPassword from "./Pages/ResetPassword";
+import Dashboard from "./Pages/Dashboard";
 
 function App() {
   useEffect(() => {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/forgot-password-otp" element={<ForgotPasswordOtp />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
       {/* <Footer /> */}
     </>

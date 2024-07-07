@@ -12,7 +12,7 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    navigate('/')
+    navigate('/dashboard')
   };
 
   const toggelPasswordVisibility = () => {
