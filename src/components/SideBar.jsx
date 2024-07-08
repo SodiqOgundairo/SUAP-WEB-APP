@@ -7,6 +7,7 @@ import { AiOutlineHome } from "react-icons/ai";
 import { TbGiftCard, TbSettings } from "react-icons/tb";
 import { LuCoins, LuUsers2 } from "react-icons/lu";
 import { RiLogoutCircleLine } from "react-icons/ri";
+import { MdCircleNotifications } from "react-icons/md";
 
 const SideBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,7 +31,7 @@ const SideBar = () => {
   }, [menuOpen]);
 
   return (
-    <header className="flex md:flex-col justify-between items-center h-20 md:h-screen bg-theme md:bg-dark py-10 md:fixed relative top-0  px-4 w-screen md:w-1/5 z-50">
+    <header className="flex md:flex-col justify-between items-center h-20 md:h-screen bg-theme fixed top-0 md:bg-dark py-10 pe-4  w-screen md:w-1/5 z-50">
       {/* Logo */}
       <div className="px-8">
         <img
@@ -39,18 +40,22 @@ const SideBar = () => {
           alt="Your Logo"
         />
 
-        <p className="md:hidden flex text-1xl text-dark font-bold">Welcome</p>
+        <div className="md:hidden flex gap-5 items-center text-dark justify-between">
+
+        <p className=" font-bold text-2xl">Welcome</p>
+        <MdCircleNotifications size={24}/>
+        </div>
       </div>
 
       {/* Navigation Links (Desktop) */}
-      <nav className="hidden md:flex flex-col text-theme font-bold text-xl">
+      <nav className="hidden md:flex flex-col text-theme font-bold w-full text-xl">
         <Link to="/about" className="flex  gap-3 items-center hover:text-dark hover:bg-light/15 py-6 px-8">
         <AiOutlineHome className="text-2xl"/>  Dashboard
         </Link>
 
-        <Link to="/about" className="flex  gap-3 items-center hover:text-dark hover:bg-light/15 py-6 px-8">
+        {/* <Link to="/about" className="flex  gap-3 items-center hover:text-dark hover:bg-light/15 py-6 px-8">
         <TbGiftCard className="text-2xl"/>  Gift Cards
-        </Link>
+        </Link> */}
         
         <Link to="/about" className="flex  gap-3 items-center hover:text-dark hover:bg-light/15 py-6 px-8">
         <LuCoins className="text-2xl"/>  Crypto
@@ -104,9 +109,9 @@ const SideBar = () => {
         <AiOutlineHome className="text-2xl"/>  Dashboard
         </Link>
 
-        <Link to="/about" className="flex  gap-3 items-center hover:text-dark hover:bg-light/15 py-6 px-8">
+        {/* <Link to="/about" className="flex  gap-3 items-center hover:text-dark hover:bg-light/15 py-6 px-8">
         <TbGiftCard className="text-2xl"/>  Gift Cards
-        </Link>
+        </Link> */}
         
         <Link to="/about" className="flex  gap-3 items-center hover:text-dark hover:bg-light/15 py-6 px-8">
         <LuCoins className="text-2xl"/>  Crypto
