@@ -49,7 +49,7 @@ const SideBar = () => {
 
       {/* Navigation Links (Desktop) */}
       <nav className="hidden md:flex flex-col text-theme font-bold w-full text-xl">
-        <Link to="/about" className="flex  gap-3 items-center hover:text-dark hover:bg-light/15 py-6 px-8">
+        <Link to="/dashboard" className="flex  gap-3 items-center hover:text-dark hover:bg-light/15 py-6 px-8">
         <AiOutlineHome className="text-2xl"/>  Dashboard
         </Link>
 
@@ -57,19 +57,19 @@ const SideBar = () => {
         <TbGiftCard className="text-2xl"/>  Gift Cards
         </Link> */}
         
-        <Link to="/about" className="flex  gap-3 items-center hover:text-dark hover:bg-light/15 py-6 px-8">
+        <Link to="/dashboard" className="flex  gap-3 items-center hover:text-dark hover:bg-light/15 py-6 px-8">
         <LuCoins className="text-2xl"/>  Crypto
         </Link>
         
-        <Link to="/about" className="flex  gap-3 items-center hover:text-dark hover:bg-light/15 py-6 px-8">
+        <Link to="/dashboard" className="flex  gap-3 items-center hover:text-dark hover:bg-light/15 py-6 px-8">
         <IoWalletOutline className="text-2xl"/>  Wallet
         </Link>
         
-        <Link to="/about" className="flex  gap-3 items-center hover:text-dark hover:bg-light/15 py-6 px-8">
+        <Link to="/dashboard" className="flex  gap-3 items-center hover:text-dark hover:bg-light/15 py-6 px-8">
         <LuUsers2 className="text-2xl"/>  Referrals
         </Link>
         
-        <Link to="/about" className="flex  gap-3 items-center hover:text-dark hover:bg-light/15 py-6 px-8">
+        <Link to="/dashboard" className="flex  gap-3 items-center hover:text-dark hover:bg-light/15 py-6 px-8">
         <TbSettings className="text-2xl"/>  Settings
         </Link>
 
