@@ -62,7 +62,7 @@ const SideBar = () => {
         </Link>
         
         <Link to="/dashboard" className="flex  gap-3 items-center hover:text-dark hover:bg-light/15 py-6 px-8">
-        <IoWalletOutline className="text-2xl"/> My Wallet
+        <IoWalletOutline className="text-2xl"/> Wallet
         </Link>
         
         <Link to="/dashboard" className="flex  gap-3 items-center hover:text-dark hover:bg-light/15 py-6 px-8">
